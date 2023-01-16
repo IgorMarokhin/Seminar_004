@@ -64,7 +64,7 @@ void PrintArray2(int[] array)
 
 // Вариант решения 3. Додумался не сам.
 
-Console.Clear();
+/* Console.Clear();
 int[] array = new int[8];
 
 GetNumberFromUser("Введите целое число: ", "Ошибка ввода!", array);
@@ -114,4 +114,23 @@ void PrintArray2(int[] array)
     }
     Console.Write("]");
     Console.WriteLine();
+} */
+
+// Решение с разбора на сеимнаре.
+
+int[] array = GetRandomArray(8, 0, 100);
+Console.WriteLine($"[{String.Join(", ", array)}]");
+
+/////////////////////////////////////////////
+
+int[] GetRandomArray(int size, int minValue, int maxValue)
+{
+    int[] result = new int[size];
+    var rnd = new Random();
+    for(int i = 0; i < size; i++)
+    {
+        result[i] = rnd.Next(minValue, maxValue);
+    }
+
+    return result;
 }
